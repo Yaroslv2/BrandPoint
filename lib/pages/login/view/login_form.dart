@@ -82,7 +82,7 @@ Widget loginCase(context) {
           ],
         ),
       ),
-      Padding(padding: EdgeInsets.only(top: 30)),
+      const Padding(padding: EdgeInsets.only(top: 30)),
       logButton(context, "Go back", Colors.white, Colors.black)
     ],
   );
