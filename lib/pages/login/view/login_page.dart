@@ -13,6 +13,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return const SafeArea(
         child: Scaffold(
+      resizeToAvoidBottomInset: false,
       body: LoginForm(),
     ));
   }
