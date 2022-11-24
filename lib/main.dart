@@ -72,11 +72,17 @@ class _BottomBarState extends State<BottomBar> {
         showUnselectedLabels: false,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: "home"),
+              icon: Icon(Icons.home_outlined),
+              label: "Home",
+              activeIcon: Icon(Icons.home)),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined), label: "busket"),
+              icon: Icon(Icons.shopping_cart_outlined),
+              label: "Shopping cart",
+              activeIcon: Icon(Icons.shopping_cart)),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle_outlined), label: "account")
+              icon: Icon(Icons.account_circle_outlined),
+              label: "Account",
+              activeIcon: Icon(Icons.account_circle))
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
