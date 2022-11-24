@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+final mainTextStyleBlack =
+    GoogleFonts.openSans(color: Colors.black, fontWeight: FontWeight.w400);
+
+final mainTextStyleWhite =
+    GoogleFonts.openSans(color: Colors.white, fontWeight: FontWeight.w400);
+
 class LoginStyles {
   final formHintTextStyle =
       GoogleFonts.openSans(color: Colors.black, fontWeight: FontWeight.w400);
