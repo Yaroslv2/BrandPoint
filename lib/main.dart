@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/login': (context) => const LoginPage(),
+        '/home': (context) => const HomePage(),
       },
       title: 'Marketplace',
       theme: ThemeData(
@@ -33,6 +34,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const LoginPage();
+    return const HomePage();
   }
 }
