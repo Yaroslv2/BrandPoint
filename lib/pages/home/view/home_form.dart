@@ -10,7 +10,7 @@ class HomeForm extends StatefulWidget {
 }
 
 class _HomeFormState extends State<HomeForm> {
-  void ChangeActiveCategory(index) {
+  void changeActiveCategory(index) {
     setState(() {
       if (categories[index].isSelected) {
         categories[index].isSelected = !categories[index].isSelected;
@@ -28,14 +28,29 @@ class _HomeFormState extends State<HomeForm> {
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.white,
+              toolbarHeight: 100,
+              backgroundColor: Colors.white10,
               elevation: 0,
-              title: const Text("тут должен быть поиск"),
+              title: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(25),
+                      borderSide:
+                          const BorderSide(color: Colors.grey, width: 0.5)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(color: Colors.black, width: 0.8),
+                      borderRadius: BorderRadius.circular(25)),
+                  hintText: "Search",
+                  hintStyle: textStyleGray,
+                  prefixIcon: const Icon(Icons.search),
+                ),
+              ),
             ),
             body: Column(
               children: [
                 Container(
-                    margin: const EdgeInsets.symmetric(vertical: 20),
+                    margin: const EdgeInsets.symmetric(vertical: 10),
                     height: 100,
                     width: double.infinity,
                     child: ListView.builder(
@@ -60,7 +75,7 @@ class _HomeFormState extends State<HomeForm> {
                                         borderRadius:
                                             BorderRadius.circular(20))),
                                 onPressed: () {
-                                  ChangeActiveCategory(index);
+                                  changeActiveCategory(index);
                                 },
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,

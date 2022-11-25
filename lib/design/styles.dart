@@ -7,6 +7,9 @@ final mainTextStyleBlack =
 final mainTextStyleWhite =
     GoogleFonts.openSans(color: Colors.white, fontWeight: FontWeight.w400);
 
+final textStyleGray =
+    GoogleFonts.openSans(color: Colors.grey, fontWeight: FontWeight.w400);
+
 class LoginStyles {
   final formHintTextStyle =
       GoogleFonts.openSans(color: Colors.black, fontWeight: FontWeight.w400);

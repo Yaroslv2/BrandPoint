@@ -11,14 +11,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
+        '/cart': (context) => const CartPage(),
+        '/account': (context) => const AccountPage()
       },
-      title: 'Marketplace',
-      theme: ThemeData(
-        primarySwatch: Colors.grey,
-      ),
+      theme: ThemeData(primarySwatch: Colors.grey),
       home: const MyHomePage(),
     );
   }
