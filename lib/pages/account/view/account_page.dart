@@ -6,6 +6,6 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AccountForm();
+    return const AccountForm();
   }
 }

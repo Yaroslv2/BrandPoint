@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
-
+import 'package:flutter/widgets.dart';
 import 'package:test_project/design/custom_icons.dart';
 
 class Category {
-  final label;
-  final icon;
+  final String label;
+  final IconData icon;
   bool isSelected = false;
 
   Category(this.label, this.icon) {
@@ -18,5 +17,5 @@ List<Category> categories = [
   Category("Outerwear", CustomIcons.jacket),
   Category("Hoodie", CustomIcons.hoodie),
   Category("T-shirt", CustomIcons.shirt),
-  Category("Track suit", CustomIcons.sport_wear),
+  Category("Track suit", CustomIcons.sportWear),
 ];

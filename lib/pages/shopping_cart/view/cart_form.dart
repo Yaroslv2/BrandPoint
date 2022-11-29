@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'view.dart';
 
 class CartForm extends StatefulWidget {
   const CartForm({super.key});
