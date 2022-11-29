@@ -56,30 +56,6 @@ class _HomeFormState extends State<HomeForm> {
           ),
         ),
       );
-      // return ElevatedButton(
-      //     style: ElevatedButton.styleFrom(
-      //         backgroundColor: Color.fromARGB(255, 238, 238, 238),
-      //         shape: RoundedRectangleBorder(
-      //             borderRadius: BorderRadius.circular(25))),
-      //     onPressed: () {},
-      //     child: Column(
-      //       children: [
-      //         Flexible(
-      //             child: Image(
-      //           image: product.images[0],
-      //           width: 100,
-      //           height: 100,
-      //         )),
-      //         Text(
-      //           product.label,
-      //           style: mainTextStyleBlack,
-      //         ),
-      //         Text(
-      //           product.price.toString(),
-      //           style: textStyleGray,
-      //         )
-      //       ],
-      //     ));
     }
 
     Widget categoryButton(category, index) {
