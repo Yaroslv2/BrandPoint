@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test_project/design/styles.dart';
-import '../../../data/product.dart';
+import '../../../api/data/product.dart';
 import '../data/categories.dart';
 
 class HomeForm extends StatefulWidget {

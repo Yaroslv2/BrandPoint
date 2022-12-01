@@ -11,11 +11,19 @@ Widget createAccount(context) {
         child: Column(
           children: <Widget>[
             TextFormField(
+              obscureText: true,
+              style: GoogleFonts.openSans(
+                  color: Colors.black, fontWeight: FontWeight.w600),
               decoration: InputDecoration(
-                  hintText: "e-mail",
-                  hintStyle: _hintTextStyle,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25))),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    borderSide: BorderSide.none),
+                filled: true,
+                fillColor: Colors.white,
+                hintText: "Password",
+                hintStyle: GoogleFonts.openSans(
+                    color: Colors.grey, fontWeight: FontWeight.w400),
+              ),
             ),
             TextFormField(),
             TextFormField()

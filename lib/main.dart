@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         '/account': (context) => const AccountPage()
       },
       theme: ThemeData(primarySwatch: Colors.grey),
-      home: const MyHomePage(),
+      home: const LoginPage(),
     );
   }
 }

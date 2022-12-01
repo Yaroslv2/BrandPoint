@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:test_project/api/user_api/api.dart';
 import 'package:test_project/design/styles.dart';
 
 import '../cubit/login_cubit.dart';
@@ -118,7 +119,87 @@ Widget loginCase(context) {
 }
 
 Widget createNewCase(context) {
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
+  final TextEditingController username = TextEditingController();
   return Column(
-    children: [logButton(context, "Go back", Colors.white, Colors.black)],
+    children: [
+      Form(
+        child: Column(
+          children: <Widget>[
+            TextFormField(
+              controller: email,
+              validator: (value) =>
+                  !value!.contains('@') || !value.contains('.')
+                      ? "Input the correct e-mail"
+                      : null,
+              style: GoogleFonts.openSans(
+                  color: Colors.black, fontWeight: FontWeight.w600),
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    borderSide: BorderSide.none),
+                hintText: "E-mail",
+                hintStyle: GoogleFonts.openSans(
+                    color: Colors.grey, fontWeight: FontWeight.w400),
+              ),
+            ),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 7.5)),
+            TextFormField(
+              controller: password,
+              obscureText: true,
+              style: GoogleFonts.openSans(
+                  color: Colors.black, fontWeight: FontWeight.w600),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    borderSide: BorderSide.none),
+                filled: true,
+                fillColor: Colors.white,
+                hintText: "Password",
+                hintStyle: GoogleFonts.openSans(
+                    color: Colors.grey, fontWeight: FontWeight.w400),
+              ),
+            ),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 7.5)),
+            TextFormField(
+              controller: username,
+              obscureText: true,
+              style: GoogleFonts.openSans(
+                  color: Colors.black, fontWeight: FontWeight.w600),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    borderSide: BorderSide.none),
+                filled: true,
+                fillColor: Colors.white,
+                hintText: "Username",
+                hintStyle: GoogleFonts.openSans(
+                    color: Colors.grey, fontWeight: FontWeight.w400),
+              ),
+            ),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 15)),
+            MaterialButton(
+                color: Colors.white,
+                height: 55,
+                minWidth: 150,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
+                child: Text("Create Account",
+                    style: GoogleFonts.openSans(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600)),
+                onPressed: () {
+                  postUser(email.text, password.text, username.text);
+                })
+          ],
+        ),
+      ),
+      Padding(padding: EdgeInsets.only(top: 200)),
+      logButton(context, "Go back", Colors.white, Colors.black)
+    ],
   );
 }
