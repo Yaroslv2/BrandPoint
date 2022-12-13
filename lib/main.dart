@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'api/user_api/bloc/user_bloc.dart';
 import 'pages.dart';
 
 void main() {
@@ -14,12 +16,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/login': (context) => const LoginPage(),
-        '/home': (context) => const HomePage(),
+        '/home': (context) => const BottomBar(),
         '/cart': (context) => const CartPage(),
         '/account': (context) => const AccountPage()
       },
       theme: ThemeData(primarySwatch: Colors.grey),
-      home: const LoginPage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -33,8 +35,31 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const BottomBar();
+    return BlocProvider<UserBloc>(
+        create: (context) => UserBloc(),
+        child: BlocBuilder<UserBloc, UserState>(builder: (context, state) {
+          print(state);
+          if (state is UserInitialState) {
+            BlocProvider.of<UserBloc>(context).add(UserInitialEvent());
+          }
+          if (state is UserLogInState) {
+            print("login");
+            return BottomBar();
+          }
+          if (state is UserLogOutState) {
+            return LoginPage();
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        }));
   }
 }
 
