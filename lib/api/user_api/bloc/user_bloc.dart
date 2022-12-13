@@ -23,20 +23,16 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   }
 
   Future<void> tokenAunthefication(UserInitialEvent event, Emitter emit) async {
-    print("Token1");
     final token = await readToken();
     if (token != null && postUser(token[0], token[1], token[2]) == 200) {
-      print("Token");
       emit(UserLogInState());
     } else {
-      print("Token");
       emit(UserLogOutState());
     }
   }
 
   Future<void> userAunthefication(
       UserAuntheficationEvent event, Emitter emit) async {
-    print("Aunth");
     if (postUser(event.email, event.password, event.username) == 200) {
       saveToken(event.email, event.password, event.username);
       emit(UserLogInState());

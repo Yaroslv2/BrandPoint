@@ -44,16 +44,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return BlocProvider<UserBloc>(
         create: (context) => UserBloc(),
         child: BlocBuilder<UserBloc, UserState>(builder: (context, state) {
-          print(state);
           if (state is UserInitialState) {
             BlocProvider.of<UserBloc>(context).add(UserInitialEvent());
           }
           if (state is UserLogInState) {
-            print("login");
-            return BottomBar();
+            return const BottomBar();
           }
           if (state is UserLogOutState) {
-            return LoginPage();
+            return const LoginPage();
           } else {
             return Center(
               child: CircularProgressIndicator(),
