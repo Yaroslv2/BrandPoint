@@ -18,3 +18,8 @@ class LoginStyles {
   final Text logo = Text("BRANDPOINT",
       style: GoogleFonts.alfaSlabOne(color: Colors.white, fontSize: 44));
 }
+
+class ProductPageStyle {
+  final productLabelStyle = GoogleFonts.openSans(
+      color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20);
+}

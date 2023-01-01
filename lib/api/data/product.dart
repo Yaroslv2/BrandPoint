@@ -14,7 +14,7 @@ List<Product> catalog = [
   Product(
       "Sneakers",
       "Nike Dunk Low (GS)",
-      [35.5, 36, 36.5, 37.5],
+      [35.5, 36, 36.5, 37.5, 38, 39],
       [
         const AssetImage("assets/images/nikedunklowgs.jpg"),
         const AssetImage("assets/images/nikedunklowgs1.jpg"),

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'api/user_api/bloc/user_bloc.dart';
@@ -18,10 +20,10 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const BottomBar(),
         '/cart': (context) => const CartPage(),
-        '/account': (context) => const AccountPage()
+        '/account': (context) => const AccountPage(),
       },
       theme: ThemeData(primarySwatch: Colors.grey),
-      home: MyHomePage(),
+      home: BottomBar(),
     );
   }
 }
@@ -53,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           if (state is UserLogOutState) {
             return const LoginPage();
           } else {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }

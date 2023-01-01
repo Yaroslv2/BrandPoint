@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test_project/design/styles.dart';
+import 'package:test_project/pages.dart';
 import '../../../api/data/product.dart';
 import '../data/categories.dart';
 
@@ -41,7 +42,12 @@ class _HomeFormState extends State<HomeForm> {
           borderRadius: BorderRadius.circular(25),
           highlightShape: BoxShape.rectangle,
           containedInkWell: true,
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ProductPage(product: product)));
+          },
           child: Column(
             children: [
               Ink.image(
