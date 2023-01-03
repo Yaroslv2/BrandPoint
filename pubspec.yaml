@@ -43,7 +43,7 @@ dependencies:
   http:
   shared_preferences:
   carousel_slider:
-  flutter_swiper:
+  flutter_swiper_null_safety:
 
 dev_dependencies:
   flutter_test:

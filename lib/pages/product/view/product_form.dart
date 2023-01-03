@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:test_project/api/data/product.dart';
 import 'package:test_project/design/styles.dart';
 
@@ -52,6 +52,12 @@ class _ProductFormState extends State<ProductForm> {
                   fit: BoxFit.contain,
                 ),
                 autoplay: false,
+                pagination: const SwiperPagination(
+                    builder: DotSwiperPaginationBuilder(
+                        color: Colors.grey,
+                        activeColor: Colors.black,
+                        size: 5,
+                        activeSize: 7)),
               ),
             ),
             pinned: false,
@@ -99,6 +105,51 @@ class _ProductFormState extends State<ProductForm> {
             ),
           )
         ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        elevation: 0,
+        child: Padding(
+            padding: const EdgeInsets.all(18),
+            child: Flex(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              direction: Axis.horizontal,
+              children: [
+                Text("${widget.product.price} RUB"),
+                Padding(padding: EdgeInsets.symmetric(horizontal: 4)),
+                Expanded(
+                    flex: 1,
+                    child: SizedBox(
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            backgroundColor: Colors.white,
+                            fixedSize: Size(60, 60),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15))),
+                        child: Icon(Icons.shopping_cart_outlined),
+                      ),
+                    )),
+                Padding(padding: EdgeInsets.symmetric(horizontal: 2.5)),
+                Expanded(
+                  flex: 3,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        minimumSize: Size(200, 60),
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15))),
+                    child: Text(
+                      "BUY NOW",
+                      style: mainTextStyleWhite,
+                    ),
+                  ),
+                )
+              ],
+            )),
       ),
     );
   }
